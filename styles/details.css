@@ -1,0 +1,10 @@
+.details {
+    display: flex;
+    justify-content: center;
+}
+
+.smallContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}

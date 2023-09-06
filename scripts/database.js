@@ -129,7 +129,7 @@ const database = {
         id: 3, name: "Krakenblurst Guildhall", address: "1 Obelisk Dr", squarefeet: 30000, maxOccupancy: 500
     },
     {
-        id: 4, name: "Butts N Huts Tiki Fantastic Good Time ", address: "4000 Nibbler Hwy", squarefeet: 200000, maxOccupancy: 10000
+        id: 4, name: "Butts N Huts Tiki Fantastic Good Time", address: "4000 Nibbler Hwy", squarefeet: 200000, maxOccupancy: 10000
     },
     {
         id: 5, name: "Karen's Corn Maze", address: "7639 Pickleball Lane", squarefeet: 160000, maxOccupancy: 4000
