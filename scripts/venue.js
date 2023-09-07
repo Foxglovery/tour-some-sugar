@@ -12,13 +12,18 @@ document.addEventListener(
         if (itemClicked.dataset.type === "venue") {
             let bookedBandId = []
             for (const booking of bookings) {
-                if (Number(clickedVenueId) === booking.venueId) { //
+                if (parseInt(clickedVenueId) === booking.venueId) { //
                     bookedBandId.push(booking.bandId) // Push matches into new array
                 }
             }
             const bookedBandNames = bookedBandId.map(id => bands.find(band => band.id === id).name); // looks at new band id array and for each entry, makes new array of name of matching band.
-            const bookedBandMessage =bookedBandNames.join(`, `)
-            window.alert(`Come see ${bookedBandMessage}`)
+            let bookedBandMessage = `Come See ` //textContent displays begining message
+            if (bookedBandNames.length > 1) { // if more than 1 name in array
+                bookedBandMessage += bookedBandNames.slice(0, -1).join(`, `) + `, and ` + bookedBandNames.slice(-1); // seperates index 0 through next to last item; and adds "and" before concat slice of last entr; and adds precious commas with join
+            } else {
+                bookedBandMessage += bookedBandNames[0]
+            }
+        window.alert(bookedBandMessage)
         }
     }
 )

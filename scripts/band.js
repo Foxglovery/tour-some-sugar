@@ -12,14 +12,14 @@ document.addEventListener(
         if (itemClicked.dataset.type === "band") {
             let bookedVenueId = []
             for (const booking of bookings) {
-                if (Number(clickedBandId) === booking.bandId) { //
+                if (parseInt(clickedBandId) === booking.bandId) { // checks iterant id vs clicked id
                     bookedVenueId.push(booking.venueId) // Push matches into new array
                 }
             }
-            const bookedVenueNames = bookedVenueId.map(id => venues.find(venue => venue.id === id).name); // looks at new band id array and for each entry, makes new array of name of matching band.
+            const bookedVenueNames = bookedVenueId.map(id => venues.find(venue => venue.id === id).name); // looks at boooked band id array and for each entry, makes new array of names of venues with matching ids..
             let bookedBandMessage = `${itemClicked.textContent} will be playing at ` //textContent displays band name at top of alert
-                if (bookedVenueNames.length > 1) {
-                    bookedBandMessage += bookedVenueNames.slice(0, -1).join(`, `) + `, and ` + bookedVenueNames.slice(-1); // had to look up how to use slice to seperate the last item with an "and" and add precious commas with join
+                if (bookedVenueNames.length > 1) { // if more than 1 name in array
+                    bookedBandMessage += bookedVenueNames.slice(0, -1).join(`, `) + `, and ` + bookedVenueNames.slice(-1); // seperates index 0 through next to last item; and adds "and" before concat slice of last entr; and adds precious commas with join
                 } else {
                     bookedBandMessage += bookedVenueNames[0]
                 }
